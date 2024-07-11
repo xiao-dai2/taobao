@@ -8,6 +8,7 @@ struct Index {
   @State camera: Resource = $r("app.media.camera");
 
 
+
   build() {
     Column(){
        //共7行
@@ -39,7 +40,7 @@ struct Index {
         Text().width(23).height(23).margin({left:8})
           .backgroundImage(this.arrow_down).backgroundImageSize(ImageSize.Contain)
 
-      }.height('5%').backgroundColor(Color.White).width('100%')
+      }.height('4%').backgroundColor(Color.White).width('100%')
       //3 小程序
       Row(){
 
@@ -110,70 +111,88 @@ struct Index {
 
         Text().width('50%').height('100%').margin({left:4})
           .backgroundImage($r('app.media.img_2')).backgroundImageSize(ImageSize.Contain)
-      }.height('27%').width('100%')
+      }.height('28%').width('100%')
       //6 商品
       Row(){
         Text().width('50%').height('100%').margin({left:4})
           .backgroundImage($r('app.media.img_3')).backgroundImageSize(ImageSize.Contain)
         Text().width('50%').height('100%').margin({left:4})
           .backgroundImage($r('app.media.img_4')).backgroundImageSize(ImageSize.Contain)
-      }.height('27%').width('100%')
+      }.height('28%').width('100%')
+
 
       //7下标
-      Row(){
-        //淘
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
+      Row()
+      {
+        Column()
+        {
+          Text()
+            .width('50%')
+            .height('60%')
+            .backgroundImage($r('app.media.home'))
+            .backgroundImageSize(ImageSize.FILL)
             .onClick(()=>{
               router.pushUrl({
-                url : "pages/Index"
+                url:'pages/Index'
               })
             })
+          Text('首页')
+            .width('100%')
+            .height('40%')
+            .textAlign(TextAlign.Center)
+            .fontColor(Color.Orange)
 
-          Text('淘').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.Gray)
-
-        //视频
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
-
-
-          Text('视频').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.White)
-
-        //消息
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
-          Text('消息').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.Gray)
-
-        //购物车
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
+        }
+        .width('20%')
+        .height('100%')
+        Text()
+          .width('20%')
+          .height('100%')
+        Column()
+        {
+          Text()
+            .width('50%')
+            .height('60%')
+            .backgroundImage($r('app.media.gouwuche'))
+            .backgroundImageSize(ImageSize.FILL)
+            .onClick(()=>{
+              router.replaceUrl({
+                url:'pages/shopping_car'
+              })
+            })
+          Text('购物车')
+            .width('100%')
+            .height('40%')
+            .textAlign(TextAlign.Center)
+        }
+        .width('20%')
+        .height('100%')
+        Text()
+          .width('20%')
+          .height('100%')
+        Column()
+        {
+          Text()
+            .width('50%')
+            .height('60%')
+            .backgroundImage($r('app.media.mine'))
+            .backgroundImageSize(ImageSize.FILL)
             .onClick(()=>{
               router.pushUrl({
-                url : "pages/car"
+                url:'pages/mytaobao'
               })
             })
-          Text('购物车').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.White)
-
-        //我的淘宝
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
-          .onClick(()=>{
-            router.pushUrl({
-              url : "pages/mytaobao"
-            })
-          })
-
-          Text('我的淘宝').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.Gray)
-
-
-      }.height('11%').width('100%')
-
-
+          Text('我的')
+            .width('100%')
+            .height('40%')
+            .textAlign(TextAlign.Center)
+        }
+        .width('20%')
+        .height('100%')
+      }
+      .width('100%')
+      .height('8%')
+      .backgroundColor(Color.White)
 
 
     }

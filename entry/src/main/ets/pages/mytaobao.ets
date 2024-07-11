@@ -1,79 +1,244 @@
+import { ComposeListItem } from '@ohos.arkui.advanced.ComposeListItem'
 import router from '@ohos.router';
 @Entry
 @Component
-struct Index {
-  @State message: string = 'Hello World';
-  @State arrow_down: Resource = $r("app.media.arrow_down");
-  @State input_scan: Resource = $r("app.media.input_scan");
-  @State camera: Resource = $r("app.media.camera");
 
+struct homework_taobao {
   build() {
     Column(){
-
-      //  购物车页面
       Row(){
-        Text('我的淘宝页面').height('100%').width('100%').fontSize(100).textAlign(TextAlign.Center)
-      }.height('89%').width('100%')
-
-
+        Column(){
+          Text().width(80).height(80).borderRadius(40).borderWidth(2).borderColor(Color.Orange)
+            .backgroundImage($r('app.media.b38c4_4k')).backgroundImageSize(ImageSize.Cover)
+            .backgroundImagePosition({x:-32})
+          Text('淘龄 6年').backgroundColor('#F46F23').borderRadius(5).fontSize(12).fontColor(Color.White).width(60)
+            .margin({top:-10}).textAlign(TextAlign.Center)
+        }.margin({left:10})
+        Column(){
+          Text('淘宝用户XXX').fontSize(18).fontWeight(FontWeight.Bold).width(150).margin({left:10})//.backgroundColor(Color.White)
+          Row(){
+            Text().backgroundImage($r('app.media.ic_public_gps')).width(10).height(10).backgroundImageSize(ImageSize.Cover)
+            Text('收货地址').fontSize(12).margin({left:3})
+            Text('|').fontColor(Color.Gray).fontSize(10).margin({left:5, right:5})
+            Text().backgroundImage($r('app.media.shangdian')).width(10).height(10).backgroundImageSize(ImageSize.Cover)
+            Text('关注店铺').fontSize(12).margin({left:3})
+          }.width(150).margin({left:10, top:10})//.backgroundColor(Color.White)
+        }
+        Column(){
+          Text().backgroundImage($r('app.media.kefu')).width(20).height(20).backgroundImageSize(ImageSize.Cover)
+          Text('官方客服').fontSize(10)
+        }.width(40).height('90%').margin({left:25, top:20})//.backgroundColor(Color.White)
+        Column(){
+          Text().backgroundImage($r('app.media.shehzi')).width(20).height(20).backgroundImageSize(ImageSize.Cover)
+          Text('设置').fontSize(10)
+        }.width(40).height('90%').margin({top:20})//.backgroundColor(Color.White)
+      }.height('12%').width('100%').margin({bottom:5})//.backgroundColor(Color.Blue)
       Row(){
-        //淘
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
+        Column(){
+          Row(){
+            Text('为你节省￥1008').fontSize(12).fontColor(Color.White).backgroundColor('#FD4306').width('50%').height('15%').margin({left:-12})
+              .borderRadius({topLeft:15, bottomRight:15}).padding({left:8})
+            Text('更多').fontSize(12).width('12%').height('15%').margin({left:60}).fontColor('#B6B6B6')
+            Text().backgroundImage($r('app.media.ic_public_arrow_right')).width(10).height(10).backgroundImageSize(ImageSize.Cover)
+          }
+          Row(){
+            Text('省钱卡').fontSize(12).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:10})
+            Text('天猫积分').fontSize(12).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:10})
+            Text('红包').fontSize(12).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:10})
+            Text('优惠券').fontSize(12).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:10})
+          }
+          Row(){
+            Text('￥40').fontSize(15).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:-10}).fontWeight(FontWeight.Bold)
+            Text('546').fontSize(15).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:-10}).fontWeight(FontWeight.Bold)
+            Text('￥0.00').fontSize(15).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:-10}).fontWeight(FontWeight.Bold)
+            Text('0张').fontSize(15).width('25%').height('20%').textAlign(TextAlign.Center).margin({top:-10}).fontWeight(FontWeight.Bold)
+          }
+          Row(){
+            Text().backgroundImage($r('app.media.hongbao')).width(30).height(30).backgroundImageSize(ImageSize.Cover)
+              .margin({left:5})
+            Column(){
+              Text('点击查看更多优惠').fontSize(12).width('50%').height('30%')
+              Text('前往领券中心').fontSize(10).width('50%').height('30%').fontColor('#F2371D')
+            }.margin({left:5})
+            Text('去查看').fontSize(12).width('25%').height('50%').backgroundColor('#FF2E15').borderRadius(12)
+              .textAlign(TextAlign.Center).fontColor(Color.White).margin({left:8})
+          }.width('95%').height('30%').borderRadius(15).backgroundColor('#FEEAEB').margin({top:15})
+        }.width('60%').height('100%').margin({left:10}).borderRadius(15).backgroundColor(Color.White)
+        Column(){
+          Row(){
+            Text('88VIP').fontSize(20).width('50%').height('20%').fontColor('#FC660A').margin({left:-30})
+            Text().backgroundImage($r('app.media.right_orange')).width(10).height(10).backgroundImageSize(ImageSize.Cover)
+          }
+          Text().backgroundImage($r('app.media.hongbao1')).width(60).height(60).backgroundImageSize(ImageSize.Cover)
+            .margin({top:10, bottom:10})
+          Row(){
+            Text('40元').fontSize(12).fontColor('#F2371D')
+            Text('红包未领').fontSize(12)
+          }.margin({bottom:5})
+          Row(){
+            Text('立即领取').fontSize(10).fontColor('#F2371D')
+            Text().backgroundImage($r('app.media.ic_public_arrow_right')).width(10).height(10).backgroundImageSize(ImageSize.Cover)
+          }
+        }.width('32%').height('100%').margin({left:10}).borderRadius(15).backgroundColor(Color.White)
+      }.width('100%').height('20%')//.backgroundColor(Color.Blue)
+      Row(){
+        Column(){
+          Row(){
+            Text('我的订单').fontSize(15).fontWeight(FontWeight.Bold).width('50%').height('20%').textAlign(TextAlign.Start).padding({left:10})
+            Text('全部').fontSize(12).width('45%').height('20%').textAlign(TextAlign.End).fontColor('#B6B6B6')
+            Text().backgroundImage($r('app.media.ic_public_arrow_right')).width(10).height(10).backgroundImageSize(ImageSize.Cover)
+          }
+          Row(){
+            Column(){
+              Text().backgroundImage($r('app.media.yhka')).width(25).height(25).backgroundImageSize(ImageSize.Cover)
+              Text('待付款').fontSize(14).width('20%').height('20%').textAlign(TextAlign.Center).margin({top:5})
+            }
+            Column(){
+              Text().backgroundImage($r('app.media.baoguo')).width(25).height(25).backgroundImageSize(ImageSize.Cover)
+              Text('待发货').fontSize(14).width('20%').height('20%').textAlign(TextAlign.Center).margin({top:5})
+            }
+            Column(){
+              Text().backgroundImage($r('app.media.truck')).width(25).height(25).backgroundImageSize(ImageSize.Cover)
+              Text('待收货').fontSize(14).width('18%').height('20%').textAlign(TextAlign.Center).margin({top:5})
+            }
+            Column(){
+              Text().backgroundImage($r('app.media.daipingjia')).width(25).height(25).backgroundImageSize(ImageSize.Cover)
+              Text('待评价').fontSize(14).width('18%').height('20%').textAlign(TextAlign.Center).margin({top:5})
+            }
+            Column(){
+              Text().backgroundImage($r('app.media.tuikuan')).width(25).height(25).backgroundImageSize(ImageSize.Cover)
+              Text('退款/售后').fontSize(14).width('20%').height('20%').textAlign(TextAlign.Center).margin({top:5})
+            }
+          }.margin({top:20})
+        }
+      }.width('95%').height('15%').backgroundColor(Color.White).margin({top:10}).borderRadius(15)
+      Row(){
+        Column(){
+          Row(){
+            Text('快递').fontSize(15).fontWeight(FontWeight.Bold)//.backgroundColor(Color.Blue)
+            Text().backgroundImage($r('app.media.right_black')).width(12).height(12).backgroundImageSize(ImageSize.Cover)
+          }.width('23%').height('10%').margin({top:-10})
+          Text('查看快递信息').fontSize(10).fontColor('#B6B6B6').width('23%').height('10%')
+          Row(){
+            Text().backgroundImage($r('app.media.baoguo_1')).width(14).height(14).backgroundImageSize(ImageSize.Cover)
+              .margin({left:5})
+            Text('查取件').fontSize(14).fontWeight(FontWeight.Bold).margin({left:5})//.backgroundColor(Color.Blue)
+          }.backgroundColor('#F2F6F9').width('23%').height('20%').borderRadius(5).margin({top:10})
+          Row(){
+            Text().backgroundImage($r('app.media.zhifeiji')).width(14).height(14).backgroundImageSize(ImageSize.Cover)
+              .margin({left:5})
+            Text('查寄件').fontSize(14).fontWeight(FontWeight.Bold).margin({left:5})//.backgroundColor(Color.Blue)
+          }.backgroundColor('#F2F6F9').width('23%').height('20%').borderRadius(5).margin({top:10})
+        }.margin({left:15})
+        Column(){
+          Row(){
+            Text('收藏').fontSize(15).fontWeight(FontWeight.Bold)//.backgroundColor(Color.Blue)
+            Text().backgroundImage($r('app.media.right_black')).width(12).height(12).backgroundImageSize(ImageSize.Cover)
+          }.width('23%').height('10%').margin({top:-5})
+          Text('查看最近收藏').fontSize(10).fontColor('#B6B6B6').width('23%').height('10%')
+          Text().backgroundImage($r('app.media.wenjianjia')).width(50).height(50).backgroundImageSize(ImageSize.Cover)
+            .margin({top:5})
+          Text('暂无推荐').fontSize(12).fontWeight(FontWeight.Bold).margin({top:5})
+          Text('去逛逛更多宝贝').fontSize(12).fontColor('#F2371D')
+        }.margin({left:30})
+        Column(){
+          Row(){
+            Text('足迹').fontSize(15).fontWeight(FontWeight.Bold)//.backgroundColor(Color.Blue)
+            Text().backgroundImage($r('app.media.right_black')).width(12).height(12).backgroundImageSize(ImageSize.Cover)
+          }.width('26%').height('10%').margin({top:-12})
+          Text('看过的商品和频道').fontSize(10).fontColor('#B6B6B6').width('26%').height('10%')
+          Row(){
+            Text().backgroundImage($r('app.media.zuji')).width(20).height(20).backgroundImageSize(ImageSize.Cover)
+            Text('我的足迹').fontSize(15)
+          }.width('26%').height('10%').margin({top:15})
+          Row(){
+            Text().backgroundImage($r('app.media.hongbao2')).width(20).height(20).backgroundImageSize(ImageSize.Cover)
+            Text('红包签到').fontSize(15)
+          }.width('26%').height('10%').margin({top:10})
+          Row(){
+            Text().backgroundImage($r('app.media.xianjing')).width(20).height(20).backgroundImageSize(ImageSize.Cover)
+            Text('摇现金').fontSize(15)
+          }.width('26%').height('10%').margin({top:10})
+        }.margin({left:30})
+      }.width('95%').height('20%').backgroundColor(Color.White).margin({top:10}).borderRadius(15)
+      Row(){
+        Text('看TA在买').width('100%').margin({left:10, top:8}).fontSize(14)
+      }
+      Row(){
+        Text().backgroundImage($r('app.media.kongtiao')).width('45%').height('19%').backgroundImageSize(ImageSize.Cover)
+          .margin({left:10}).backgroundColor(Color.White).borderRadius(15)
+        Text().backgroundImage($r('app.media.latiao')).width('45%').height('19%').backgroundImageSize(ImageSize.Cover)
+          .margin({left:10}).backgroundColor(Color.White).borderRadius(15)
+      }.width('100%')
+
+      //底部
+      Row()
+      {
+        Column()
+        {
+          Text()
+            .width('50%')
+            .height('60%')
+            .backgroundImage($r('app.media.home'))
+            .backgroundImageSize(ImageSize.FILL)
             .onClick(()=>{
               router.pushUrl({
-                url : "pages/Index"
+                url:'pages/Index'
               })
             })
-
-          Text('淘').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.Gray)
-
-        //视频
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
-
-
-          Text('视频').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.White)
-
-        //消息
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
-          Text('消息').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.Gray)
-
-        //购物车
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
+          Text('首页')
+            .width('100%')
+            .height('40%')
+            .textAlign(TextAlign.Center)
+        }
+        .width('20%')
+        .height('100%')
+        Text()
+          .width('20%')
+          .height('100%')
+        Column()
+        {
+          Text()
+            .width('50%')
+            .height('60%')
+            .backgroundImage($r('app.media.gouwuche'))
+            .backgroundImageSize(ImageSize.FILL)
             .onClick(()=>{
               router.pushUrl({
-                url : "pages/car"
+                url:'pages/shopping_car'
               })
             })
-          Text('购物车').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.White)
+          Text('购物车')
+            .width('100%')
+            .height('40%')
+            .textAlign(TextAlign.Center)
+        }
+        .width('20%')
+        .height('100%')
+        Text()
+          .width('20%')
+          .height('100%')
+        Column()
+        {
+          Text()
+            .width('50%')
+            .height('60%')
+            .backgroundImage($r('app.media.mine'))
+            .backgroundImageSize(ImageSize.FILL)
 
-        //我的淘宝
-        Column() {
-          Text().width('80%').height('40%').backgroundColor(Color.Green)
-            .onClick(()=>{
-              router.pushUrl({
-                url : "pages/mytaobao"
-              })
-            })
+          Text('我的')
+            .width('100%')
+            .height('40%')
+            .textAlign(TextAlign.Center)
+            .fontColor(Color.Orange)
+        }
+        .width('20%')
+        .height('100%')
+      }
+      .width('100%')
+      .height('8%')
+      .backgroundColor(Color.White)
 
-          Text('我的淘宝').width('100%').fontSize(15).height('20%').textAlign(TextAlign.Center)
-        }.width('20%').backgroundColor(Color.Gray)
-
-
-      }.height('11%').width('100%')
-
-
-
-
-    }
-    .height('100%')
-    .width('100%')
+    }.width('100%').height('100%').backgroundColor('#FEEAEB')
   }
 }

@@ -1,7 +1,7 @@
 {
   "src": [
     "pages/Index",
-    "pages/car",
-    "pages/mytaobao"
+    "pages/mytaobao",
+    "pages/shopping_car"
   ]
 }
